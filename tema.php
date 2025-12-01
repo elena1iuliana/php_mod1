@@ -50,10 +50,89 @@
     echo "\n";
 
 //ex2----------------------
-   $str="cuvantrandom";
-   for($i=strlen($str)-1;$i>=0;$i--)
+$str="cuvantrandom";
+for($i=strlen($str)-1;$i>=0;$i--)
     echo $str[$i];
 echo "\n";
+//ex2.2
+$vocale="aeiouAEIOU";$v=0;$c=0;
+for($i=0;$i<=strlen($str)-1;$i++)
+{
+       if (strchr($vocale, $str[$i]) !== false) 
+        $v++;
+    else
+        $c++;
+}
+ echo $v. " ".$c;
+echo "\n";
+//ex3-------------------
+$aux=0;
+ for($i=0;$i<=20-1;$i++)
+    for($j=$i+1;$j<=20;$j++)
+        if($vec[$i]>$vec[$j])
+          { $aux=$vec[$i];
+            $vec[$i]=$vec[$j];
+            $vec[$j]=$aux;
+          }
+
+ foreach($vec as $n){
+     echo $n . " ";
+   }
+echo "\n";
+
+$aux=0;
+for($i=0;$i<=20-1;$i++)
+    for($j=$i+1;$j<=20;$j++)
+        if($vec[$i]<$vec[$j])
+          { $aux=$vec[$i];
+            $vec[$i]=$vec[$j];
+            $vec[$j]=$aux;
+          }
+
+ foreach($vec as $n){
+     echo $n . " ";
+   }
+
+echo "\n";
+
+ $fr = array_fill(0, 100, 0);
+ for($i=0;$i<=20;$i++)
+ {
+    $fr[$vec[$i]]++;
+ }
+ for($j=0;$j<100;$j++)
+ {
+    if($fr[$j]>0)
+        echo $j . " ";
+ }
+
+ echo "\n";
+
+ //ex4--------------------
+ function factorial($n) {
+    if ($n < 0) {
+        return null;
+    }
+
+    $result = 1;
+    for ($i = 1; $i <= $n; $i++) {
+        $result *= $i;
+    }
+    return $result;
+}
+
+echo factorial(5); 
+
+echo "\n";
+
+function fib($n) {
+    if ($n <= 1) {
+        return $n;
+    }
+    return fib($n - 1) + fib($n - 2);
+}
+
+echo fib(15);
 
 ?>
 
