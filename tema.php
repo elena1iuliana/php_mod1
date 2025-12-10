@@ -139,8 +139,32 @@ $students = [
     "Bob" => 72,
     "Charlie" => 90
 ];
+//ex1
+$average = array_sum($students) / count($students);
+echo "Average Grade: " . $average;
+echo "\n";
+//ex2
+$notamax=max($students);
+$studentulm=array_search($notamax,$students);
+echo $notamax." ". $studentulm ; 
+echo "\n";
+
+$notamin=min($students);
+$studentmi=array_search($notamin,$students);
+echo $notamin." ". $studentmi ; 
+echo "\n";
+
+echo "Students who passed:<br>";
+foreach ($students as $student => $grade) {
+    if ($grade >= 60) {
+        echo "$student ($grade)";
+        echo "\n";
+
+    }
+}
 
 
 ?>
+
 
 
